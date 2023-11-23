@@ -1,5 +1,6 @@
 **/*.iml
 target/
+.idea
 .idea/modules.xml
 .idea/misc.xml
 .idea/compiler.xml
@@ -17,4 +18,3 @@ target/
 .metadata/*
 .DS_Store
 .checkstyle
-

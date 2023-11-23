@@ -13,7 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
+<<<<<<< HEAD
         uses: actions/checkout@v2.3.4
+=======
+        uses: actions/checkout@v2.4.1
+>>>>>>> app-maven-plugin/master
 
       - name: Check input
         run: |
@@ -41,13 +45,24 @@ jobs:
 
           git push origin v${{ github.event.inputs.release_version }}
           git push origin release-v${{ github.event.inputs.release_version }}
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> app-maven-plugin/master
       - name: Create pull request
         uses: repo-sync/pull-request@v2.6.2
         id: create-pr
         with:
+<<<<<<< HEAD
           # Use a personal token to file a PR to trigger other workflows (e.g., unit tests):
           # https://docs.github.com/en/actions/reference/events-that-trigger-workflows#triggering-new-workflows-using-a-personal-access-token
+=======
+          # Use a personal token to file a PR to trigger other workflows (e.g., unit tests).
+          # Save your access token as GA_RELEASE_PR_PERSONAL_TOKEN.
+          # https://docs.github.com/en/actions/reference/events-that-trigger-workflows#triggering-new-workflows-using-a-personal-access-token
+          # https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets
+>>>>>>> app-maven-plugin/master
           github_token: ${{ secrets.GA_RELEASE_PR_PERSONAL_TOKEN }}
           source_branch: release-v${{ github.event.inputs.release_version }}
           pr_title: "release v${{ github.event.inputs.release_version }}"

@@ -5,6 +5,7 @@ set -e
 # Display commands to stderr.
 set -x
 
+<<<<<<< HEAD
 cd github/appengine-plugins-core
 
 unset JAVA_TOOL_OPTIONS
@@ -23,3 +24,11 @@ else
   # running as root - skip file permissions tests that don't work on Docker
   ./mvnw clean install -B -U -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS -Dtest=!FilePermissionsTest
 fi
+=======
+sudo /opt/google-cloud-sdk/bin/gcloud components update --quiet
+sudo /opt/google-cloud-sdk/bin/gcloud components install app-engine-java --quiet
+
+cd github/app-maven-plugin
+./mvnw clean install -B -U
+# bash <(curl -s https://codecov.io/bash)
+>>>>>>> app-maven-plugin/master

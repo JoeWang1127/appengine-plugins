@@ -18,10 +18,19 @@ jobs:
       CLOUDSDK_CORE_DISABLE_PROMPTS: true
     steps:
       - uses: actions/checkout@v2
+<<<<<<< HEAD
       - uses: actions/setup-java@v1
         with:
           java-version: ${{ matrix.java }}
       - uses: google-github-actions/setup-gcloud@v0.2.0
+=======
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-java@v2
+        with:
+          distribution: zulu
+          java-version: ${{ matrix.java }}
+>>>>>>> app-maven-plugin/master
       - uses: actions/cache@v2
         with:
           path: ~/.m2/repository
@@ -30,6 +39,7 @@ jobs:
             ${{ runner.os }}-maven-
       - name: Run tests
         run: |
+<<<<<<< HEAD
           # google-github-actions/setup-gcloud@v0.2.0 sets up gcloud at, e.g,.
           # "/opt/hostedtoolcache/gcloud/325.0.0/x64". appengine-plugins-core
           # fails to find it, since the directory doesn't end with
@@ -43,3 +53,6 @@ jobs:
 
           gcloud components install app-engine-java --quiet
           ./mvnw -B -U --fail-at-end clean verify -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS
+=======
+          ./mvnw -B -U --fail-at-end clean verify
+>>>>>>> app-maven-plugin/master

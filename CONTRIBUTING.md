@@ -22,8 +22,8 @@ use Github pull requests for this purpose.
 
 Before submitting a pull request, please make sure to:
 
-- Identify an existing [issue](https://github.com/GoogleCloudPlatform/appengine-plugins-core/issues) to associate with
-  your proposed change, or [file a new issue](https://github.com/GoogleCloudPlatform/appengine-plugins-core/issues/new).
+- Identify an existing [issue](https://github.com/GoogleCloudPlatform/appengine-plugins/issues) to associate with
+  your proposed change, or [file a new issue](https://github.com/GoogleCloudPlatform/appengine-plugins/issues/new).
 - Describe any implementation plans in the issue and wait for a review from the repository maintainers.
 
 ### The small print
